@@ -58,7 +58,6 @@ type GioniSettimana =
   | 'Venerdi'
   | 'Sabato'
   | 'Domenica'
-
 let ieri: GioniSettimana = 'Domenica'
 // let domani: GioniSettimana = 'Boh' // Errore
 
@@ -70,24 +69,80 @@ const numers1: Array<Number> = [1, 2, 3]
 
 // 11) Crea una tupla per definire un array di 5 elementi, i primi 3 devono essere stringhe e gli ultimi due numeri.
 
-/*
-
-*/
+const tuple: [string, string, string, number, number] = [
+  'Aldo',
+  'Giovanni',
+  'Giacomo',
+  1,
+  2,
+]
 
 // 12) Qual è la differenza tra type e interface?
 
+/* Entrambi sono utilizzati per definire la forma degli oggetti in TS, ma differiscono in alcuni elementi:
+Type viene usato per i tipi primitivi e non, esembio le stringhe letterali, ma non è estendibile direttamente e non può essere usato per definire gli oggetti e le funzioni
+Interface può essere esteso, quindi si possono implementare più elementi al suo interno (direttamente), e viene usato per gli oggetti e le funzioni
+*/
+
 // 13) Definisci un'interfaccia in TypeScript per un oggetto dotato di proprietà "firstname", "lastname", e "age".
+
+interface DatiPersona {
+  fistname: string
+  lastname: string
+  age: number
+}
 
 // 14) Crea un'interfaccia per un utente con email obbligatoria e telefono opzionale.
 
+interface DatiAccesso {
+  email: string
+  numTelefono?: number | string
+}
+
 // 15) Crea un array tipizzato di oggetti "Studente" con nome e voto.
+
+interface Studente {
+  nome: string
+  voto: number
+}
+
+const studenti: Studente[] = [
+  { nome: 'Mario', voto: 8 },
+  { nome: 'Francesco', voto: 7 },
+  { nome: 'Elena', voto: 10 },
+]
 
 // 16) Crea un'interfaccia base "Veicolo" e estendila per creare "Auto".
 
+interface Veicolo {
+  marca: string
+  modello: string
+}
+interface Auto extends Veicolo {
+  cavalliVapore: number
+  motore: string
+}
+
 // 17) Crea un oggetto che implementi l'interfaccia Auto.
+
+const laMiaAuto: Auto = {
+  marca: 'Ford',
+  modello: 'Fiesta',
+  cavalliVapore: 100,
+  motore: '1.0 EcoBoost',
+}
 
 // 18) Cosa sono i Generics in TypeScript?
 
+// I Generics sono dei "type" che vengono passati come argomento, per rendere più versatile e riutilizzabile "interface"
+
 // 19) È possibile avere più tipi generici in un'interfaccia?
 
+// Si, è pobbile, e solitamente sono assegnati con la lettera maiuscola. es Adress<A>
+
 // 20) Crea un'interfaccia generica per una risposta API.
+interface APIrisposta<A> {
+  risposta: boolean
+  messaggio: string
+  data?: A
+}

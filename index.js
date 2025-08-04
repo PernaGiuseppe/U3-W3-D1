@@ -39,15 +39,22 @@ var ieri = 'Domenica';
 var numbers = [1, 2, 3];
 var numers1 = [1, 2, 3];
 // 11) Crea una tupla per definire un array di 5 elementi, i primi 3 devono essere stringhe e gli ultimi due numeri.
-/*
-
-*/
-// 12) Qual è la differenza tra type e interface?
-// 13) Definisci un'interfaccia in TypeScript per un oggetto dotato di proprietà "firstname", "lastname", e "age".
-// 14) Crea un'interfaccia per un utente con email obbligatoria e telefono opzionale.
-// 15) Crea un array tipizzato di oggetti "Studente" con nome e voto.
-// 16) Crea un'interfaccia base "Veicolo" e estendila per creare "Auto".
+var tuple = [
+    'Aldo',
+    'Giovanni',
+    'Giacomo',
+    1,
+    2,
+];
+var studenti = [
+    { nome: 'Mario', voto: 8 },
+    { nome: 'Francesco', voto: 7 },
+    { nome: 'Elena', voto: 10 },
+];
 // 17) Crea un oggetto che implementi l'interfaccia Auto.
-// 18) Cosa sono i Generics in TypeScript?
-// 19) È possibile avere più tipi generici in un'interfaccia?
-// 20) Crea un'interfaccia generica per una risposta API.
+var laMiaAuto = {
+    marca: 'Ford',
+    modello: 'Fiesta',
+    cavalliVapore: 100,
+    motore: '1.0 EcoBoost',
+};
